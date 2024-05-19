@@ -1,0 +1,11 @@
+openai
+scikit-learn
+numpy
+fastapi
+jinja2
+uvicorn
+requests
+openpyxl
+pandas
+xgboost
+optuna
