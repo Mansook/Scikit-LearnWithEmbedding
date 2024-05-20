@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report
 from dataParsing import labels
 
 # 엑셀 파일에서 임베딩 데이터 로드
-df = pd.read_excel('embeddings.xlsx', header=None)
+df = pd.read_excel('embeddingl.xlsx', header=None)
 embeddings = df.values
 
 # 데이터를 학습 및 테스트 세트로 분할

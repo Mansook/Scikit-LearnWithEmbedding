@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
 from dataParsing import labels
-import optuna
+import optunaModel
 
 # 엑셀 파일에서 임베딩 데이터 로드
 df = pd.read_excel('embeddings.xlsx', header=None)
@@ -76,7 +76,7 @@ models = {
 
 for model_name, optimization_function in models.items():
     print(f"Optimizing {model_name}...")
-    study = optuna.create_study(direction='maximize')
+    study = optunaModel.create_study(direction='maximize')
     study.optimize(optimization_function, n_trials=50)
     print(f'Best hyperparameters for {model_name}: {study.best_params}')
     print()
@@ -85,7 +85,7 @@ for model_name, optimization_function in models.items():
 best_params = {}
 
 for model_name, optimization_function in models.items():
-    study = optuna.create_study(direction='maximize')
+    study = optunaModel.create_study(direction='maximize')
     study.optimize(optimization_function, n_trials=50)
     best_params[model_name] = study.best_params
 

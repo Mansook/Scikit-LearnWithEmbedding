@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report
 from dataParsing import labels
-import optuna
+import optunaModel
 
 # 엑셀 파일에서 임베딩 데이터 로드
 df = pd.read_excel('embeddings.xlsx', header=None)
@@ -31,7 +31,7 @@ def objective(trial):
 
 
 # Optuna 스터디 생성 및 최적화 실행
-study = optuna.create_study(direction='maximize')
+study = optunaModel.create_study(direction='maximize')
 study.optimize(objective, n_trials=100)
 
 # 최적의 하이퍼파라미터 출력

@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from dataParsing import labels
 
-df = pd.read_excel('embeddings.xlsx', header=None)
+df = pd.read_excel('embeddingl.xlsx', header=None)
 embeddings = df.values
 
 X_train, X_test, y_train, y_test = train_test_split(

@@ -6,7 +6,7 @@ from embedding import embedding
 # 모델 로드
 clf = joblib.load('svm_model.pkl')
 
-data = "아 진짜 어머 없네ㅋ"
+data = "아 고아새끼가 진짜  "
 embeds = embedding(data)
 # 예측 수행
 predictions = clf.predict(embeds)
