@@ -1,4 +1,10 @@
-def parse_data(file_path):
+import pandas as pd
+
+file_path = 'dataset.txt'
+file_path2 = 'dataset2.xlsx'
+
+
+def parse_data():
     data = []
     labels = []
 
@@ -10,10 +16,24 @@ def parse_data(file_path):
                 data.append(text)
                 labels.append(label)
 
+    df = pd.read_excel(file_path2, header=None)
+    lines = df.values
+    for line in lines:
+        line = line[0]
+        text, label = line.split('\t', 1)
+        data.append(text)
+        labels.append(label)
+
     return data, labels
 
 
-file_path = 'dataset.txt'
-
-text, labels = parse_data(file_path)
+text, labels = parse_data()
+print(len(text))
 print(len(labels))
+# 라벨 데이터를 DataFrame으로 변환
+labels_df = pd.DataFrame(labels, columns=['label'])
+
+# DataFrame을 엑셀 파일로 저장
+labels_df.to_excel('labels.xlsx', index=False)
+
+print("라벨 데이터가 labels.xlsx 파일에 저장되었습니다.")

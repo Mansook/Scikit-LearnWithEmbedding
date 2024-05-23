@@ -10,6 +10,7 @@ def chunk_list(lst, chunk_size):
         yield lst[i:i + chunk_size]
 
 
+# api호출시 대략 3000개정도가 최대임 2000개씩 나눠서 요청
 chunk_size = 2000
 text_chunks = list(chunk_list(text, chunk_size))
 
