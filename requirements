@@ -9,3 +9,6 @@ openpyxl
 pandas
 xgboost
 optuna
+torch
+transformers
+kobert-transformers

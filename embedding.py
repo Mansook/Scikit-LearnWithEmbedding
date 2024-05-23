@@ -18,7 +18,6 @@ def embedding(txt):
         "model": "text-embedding-3-large"
     }
 
-# POST 요청 보내기
     response = requests.post(
         'https://api.openai.com/v1/embeddings', headers=headers, data=json.dumps(data))
 

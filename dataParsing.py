@@ -13,9 +13,7 @@ def parse_data(file_path):
     return data, labels
 
 
-# 예제 파일 경로
 file_path = 'dataset.txt'
 
-# 데이터 파싱
 text, labels = parse_data(file_path)
 print(len(labels))

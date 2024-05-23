@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 
 def objective(trial):
-    # 하이퍼파라미터 탐색 공간 정의
+
     C = trial.suggest_loguniform('C', 1e-4, 1e2)
     kernel = trial.suggest_categorical(
         'kernel', ['linear', 'rbf', 'poly', 'sigmoid'])
@@ -34,14 +34,12 @@ def objective(trial):
 study = optunaModel.create_study(direction='maximize')
 study.optimize(objective, n_trials=100)
 
-# 최적의 하이퍼파라미터 출력
 print('Best hyperparameters: {}'.format(study.best_params))
 
-# 최적의 하이퍼파라미터를 사용하여 모델 학습 및 평가
 best_params = study.best_params
 clf = SVC(**best_params, random_state=42)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
-# 성능 평가
+
 print(classification_report(y_test, y_pred))
