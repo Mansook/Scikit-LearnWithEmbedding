@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import pandas as pd
+from dataParsing import labels
 from kobert_transformers import get_kobert_model
 from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import accuracy_score, f1_score

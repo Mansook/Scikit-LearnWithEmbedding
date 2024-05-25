@@ -22,14 +22,16 @@ def parse_data():
         line = line[0]
         text, label = line.split('\t', 1)
         data.append(text)
-        labels.append(label)
+        if label == '0':
+            labels.append(1)
+        else:
+            labels.append(0)
 
     return data, labels
 
 
 text, labels = parse_data()
-print(len(text))
-print(len(labels))
+
 # 라벨 데이터를 DataFrame으로 변환
 labels_df = pd.DataFrame(labels, columns=['label'])
 

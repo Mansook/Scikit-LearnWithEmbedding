@@ -15,7 +15,7 @@ def embedding(txt):
     # 요청 데이터 설정
     data = {
         "input": txt,
-        "model": "text-embedding-3-large"
+        "model": "text-embedding-3-small"
     }
 
     response = requests.post(
