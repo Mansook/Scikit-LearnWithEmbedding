@@ -1,0 +1,8 @@
+텍스트나 엑셀로된 dataset이나 embedding된 set들은 용량이 커서 깃에 업로드 되지 않을 수 있음
+
+dataParsing.py  :  dataset 파싱해서 text와 label 분리
+DataToEmbed.py : 준비한 데이터셋 text를 embedding해서 저장. 임베딩api는 한번에 3천개밖에 요청 못하므로 쪼개서 보냄
+embedding.py : 임베딩 api
+predict.py : 학습한 모델로 테스트
+
+optuna.py : optuna 라이브러리 사용하는 경우. 하이퍼파라미터 최적화
